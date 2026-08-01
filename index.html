@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Executive Operations & AI-Powered Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F7F8FA;
+    --surface: #FFFFFF;
+    --border: #E4E7EC;
+    --ink: #12141A;
+    --ink-soft: #565C6B;
+    --ink-faint: #8A8F9C;
+    --accent: #0E6E67;
+    --accent-soft: #E4F1EF;
+    --accent-ink: #0A524C;
+    --amber: #B8860B;
+    --amber-soft: #FBF3DE;
+    --red-soft: #FBEAEA;
+    --red: #B4433A;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --maxw: 1120px;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
+  a{ color: inherit; text-decoration: none; }
+  img{ max-width: 100%; display:block; }
+  .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+  section{ padding: 120px 0; border-top: 1px solid var(--border); }
+  section:first-of-type{ border-top: none; }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    display: inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 22px;
+    font-weight: 500;
+  }
+  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background: var(--accent); display:inline-block; }
+  h1,h2,h3,h4{ margin: 0; letter-spacing: -0.02em; font-weight: 700; }
+  h1{ font-size: 56px; line-height: 1.06; }
+  h2{ font-size: 36px; line-height: 1.15; }
+  h3{ font-size: 22px; line-height: 1.3; }
+  .lede{ font-size: 19px; color: var(--ink-soft); max-width: 640px; font-weight: 400; }
+  .section-head{ max-width: 720px; margin-bottom: 56px; }
+  .section-head h2{ margin-top: 14px; }
+  .section-head p{ margin-top: 16px; color: var(--ink-soft); font-size: 17px; }
+
+  /* NAV */
+  nav{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(247,248,250,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding: 18px 32px; }
+  .brand{ font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+  .brand .mono{ color: var(--accent); font-weight:600; }
+  .navlinks{ display:flex; gap: 32px; font-size: 14px; color: var(--ink-soft); }
+  .navlinks a:hover{ color: var(--ink); }
+  .navcta{
+    font-size: 13.5px; font-weight:600; padding: 9px 16px; border-radius: 100px;
+    background: var(--ink); color: #fff;
+  }
+  @media (max-width: 760px){ .navlinks{ display:none; } }
+
+  /* HERO */
+  .hero{ padding-top: 88px; padding-bottom: 90px; }
+  .hero-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items:start; }
+  .hero h1 span{ color: var(--accent); }
+  .hero-actions{ display:flex; gap:14px; margin-top: 34px; flex-wrap: wrap; }
+  .btn{
+    padding: 13px 22px; border-radius: 10px; font-size: 14.5px; font-weight: 600;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-primary{ background: var(--ink); color:#fff; }
+  .btn-secondary{ border: 1px solid var(--border); background: var(--surface); }
+  .btn:hover{ opacity: 0.85; }
+
+  .hero-panel{
+    background: var(--surface); border:1px solid var(--border); border-radius: var(--radius);
+    padding: 26px; box-shadow: 0 1px 2px rgba(20,20,30,0.03);
+  }
+  .hero-panel .panel-title{ font-size: 12.5px; color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.08em; margin-bottom: 18px; }
+  .kpi-row{ display:flex; align-items:center; justify-content:space-between; padding: 14px 0; border-top: 1px solid var(--border); }
+  .kpi-row:first-of-type{ border-top:none; }
+  .kpi-label{ font-size: 13.5px; color: var(--ink-soft); }
+  .kpi-value{ font-family:'IBM Plex Mono', monospace; font-weight:600; font-size: 16px; }
+  .status-dot{ width:7px; height:7px; border-radius:50%; display:inline-block; margin-right:8px; }
+  .status-dot.live{ background: var(--accent); }
+
+  /* Ticker strip */
+  .ticker{ border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); }
+  .ticker .wrap{ padding: 22px 32px; display:flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
+  .ticker-item{ display:flex; flex-direction:column; gap:4px; }
+  .ticker-item .tv{ font-family:'IBM Plex Mono', monospace; font-weight:700; font-size: 21px; }
+  .ticker-item .tl{ font-size: 12.5px; color: var(--ink-faint); }
+
+  /* Cards grid */
+  .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .grid-2{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  @media (max-width: 900px){ .grid-3{ grid-template-columns: 1fr; } .grid-2{ grid-template-columns:1fr; } .hero-grid{ grid-template-columns: 1fr; } }
+
+  .card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 30px; transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(20,20,30,0.06); }
+  .card .icon{ width:38px; height:38px; border-radius:10px; background: var(--accent-soft); display:flex; align-items:center; justify-content:center; margin-bottom: 18px; color: var(--accent-ink); }
+  .card h3{ margin-bottom: 10px; }
+  .card p{ color: var(--ink-soft); font-size: 14.5px; margin:0; }
+
+  /* Skills */
+  .skill-cat{ margin-bottom: 34px; }
+  .skill-cat h4{ font-size: 13px; text-transform:uppercase; letter-spacing:0.08em; color: var(--ink-faint); margin-bottom: 16px; font-family:'IBM Plex Mono',monospace; font-weight:500; }
+  .chips{ display:flex; flex-wrap:wrap; gap: 10px; }
+  .chip{
+    border:1px solid var(--border); background: var(--surface); padding: 9px 15px; border-radius: 100px;
+    font-size: 13.5px; font-weight:500; color: var(--ink);
+  }
+
+  /* Tools table-ish */
+  .tool-row{ display:grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 20px 0; border-top:1px solid var(--border); align-items:start; }
+  .tool-row:first-of-type{ border-top:none; }
+  .tool-name{ font-weight:600; font-size:15px; }
+  .tool-tag{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color: var(--accent-ink); background:var(--accent-soft); padding:2px 8px; border-radius:6px; display:inline-block; margin-top:6px; }
+  .tool-desc{ color: var(--ink-soft); font-size:14.5px; }
+
+  /* Project index cards */
+  .proj-card{
+    background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .proj-media{
+    height: 160px; background: linear-gradient(135deg, var(--accent-soft), #fff);
+    display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--border);
+    font-family:'IBM Plex Mono',monospace; color: var(--accent-ink); font-size:13px; letter-spacing:0.04em;
+    padding: 14px 18px;
+  }
+  .proj-media svg{ width:100%; height:100%; }
+  .case-visual{
+    border:1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+    padding: 22px 26px 8px; margin-bottom: 44px;
+  }
+  .case-visual svg{ width:100%; height:auto; display:block; }
+  .location-line{ margin-top:24px; font-size:13.5px; color: var(--ink-faint); font-family:'IBM Plex Mono',monospace; }
+  .project-note{
+    display:inline-block; font-size:11.5px; font-family:'IBM Plex Mono',monospace; color: var(--ink-faint);
+    border:1px solid var(--border); padding:3px 10px; border-radius:100px; margin-left:8px;
+  }
+  .proj-body{ padding: 26px; flex:1; display:flex; flex-direction:column; }
+  .proj-tag{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px; }
+  .proj-stats{ display:flex; gap:18px; margin-top:18px; padding-top:18px; border-top:1px solid var(--border); }
+  .proj-stats div{ font-size:12.5px; color:var(--ink-faint); }
+  .proj-stats span{ display:block; font-family:'IBM Plex Mono',monospace; font-weight:700; color:var(--ink); font-size:16px; }
+  .proj-link{ margin-top:20px; font-weight:600; font-size:14px; color: var(--accent-ink); display:inline-flex; align-items:center; gap:6px; }
+
+  /* Case study */
+  .case{ padding: 100px 0; }
+  .case-head{ display:flex; justify-content:space-between; align-items:flex-end; gap: 40px; margin-bottom: 48px; flex-wrap:wrap; }
+  .case-num{ font-family:'IBM Plex Mono',monospace; color: var(--ink-faint); font-size:13px; margin-bottom:12px; }
+  .case-stats-row{ display:flex; gap: 40px; flex-wrap:wrap; }
+  .case-stats-row .stat span{ display:block; font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:24px; }
+  .case-stats-row .stat div{ font-size:12.5px; color:var(--ink-faint); margin-top:4px; }
+
+  .case-section{ margin-bottom: 44px; }
+  .case-section h3{ display:flex; align-items:center; gap:10px; margin-bottom: 16px; }
+  .case-section h3::before{
+    content:''; width:4px; height: 18px; background: var(--accent); border-radius:2px; display:inline-block;
+  }
+  .case-section p, .case-section li{ color: var(--ink-soft); font-size: 15.5px; }
+  .case-section ul{ margin:0; padding-left: 20px; }
+  .case-section li{ margin-bottom: 8px; }
+  .two-col{ display:grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  @media (max-width: 900px){ .two-col{ grid-template-columns: 1fr; } .case-head{ flex-direction:column; align-items:flex-start; } }
+
+  .callout{
+    background: var(--surface); border:1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 20px 22px; font-size: 14.5px; color: var(--ink-soft);
+  }
+  .callout b{ color: var(--ink); }
+
+  .workflow-steps{ display:flex; flex-direction:column; gap:0; }
+  .wf-step{ display:grid; grid-template-columns: 34px 1fr; gap: 16px; padding: 16px 0; border-top:1px solid var(--border); }
+  .wf-step:first-of-type{ border-top:none; }
+  .wf-num{ font-family:'IBM Plex Mono',monospace; font-weight:700; color: var(--accent); font-size:14px; }
+  .wf-title{ font-weight:600; font-size:15px; margin-bottom:4px; }
+  .wf-desc{ color: var(--ink-soft); font-size:14.5px; }
+
+  .tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 4px; }
+  .tag-row .chip{ font-size:12.5px; padding:6px 12px; }
+
+  .divider-band{
+    background: var(--ink); color: #fff; padding: 90px 0; border-top:none;
+  }
+  .divider-band .wrap{ display:grid; grid-template-columns: repeat(4,1fr); gap: 32px; }
+  .divider-stat span{ font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:34px; display:block; }
+  .divider-stat div{ color: rgba(255,255,255,0.55); font-size:13.5px; margin-top:8px; }
+  @media (max-width: 760px){ .divider-band .wrap{ grid-template-columns: 1fr 1fr; } }
+
+  /* Process */
+  .process-list{ counter-reset: step; }
+  .process-item{
+    display:grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 30px 0; border-top:1px solid var(--border);
+  }
+  .process-item:first-of-type{ border-top:none; }
+  .process-index{ font-family:'IBM Plex Mono',monospace; font-size: 30px; font-weight:700; color: var(--border); }
+  .process-item h3{ margin-bottom:8px; }
+  .process-item p{ color: var(--ink-soft); margin:0; font-size: 15px; }
+
+  /* footer / contact */
+  .contact-card{
+    background: var(--ink); color:#fff; border-radius: 20px; padding: 64px 56px;
+    display:flex; justify-content:space-between; align-items:center; gap: 40px; flex-wrap:wrap;
+  }
+  .contact-card h2{ color:#fff; }
+  .contact-card p{ color: rgba(255,255,255,0.65); margin-top:14px; max-width:440px; }
+  .contact-links{ display:flex; flex-direction:column; gap: 14px; }
+  .contact-links a{ font-size:15px; font-weight:600; display:flex; align-items:center; gap:10px; }
+  .contact-links a:hover{ color: #9fe8e0; }
+  footer{ padding: 40px 0; text-align:center; color: var(--ink-faint); font-size:13px; }
+
+  .fade-in{ opacity:0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.in{ opacity:1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Trisha Mae Edos</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#results">Results</a>
+    </div>
+    <a href="#contact" class="navcta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="fade-in">
+        <div class="eyebrow"><span class="dot"></span> Executive Assistant · Operations · AI Workflow Automation</div>
+        <h1>I build the systems<br>that run <span>quietly</span><br>in the background.</h1>
+        <p class="lede">I'm an Executive Assistant with a Civil Engineering background, specializing in operations, documentation, and AI-assisted automation. I design the dashboards, trackers, and workflows that keep growing businesses organized — so founders spend less time managing information and more time making decisions.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Case Studies →</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+        <div class="location-line">📍 Pampanga, Philippines — open to remote roles</div>
+      </div>
+      <div class="hero-panel fade-in">
+        <div class="panel-title">Systems I've Built — Live Metrics</div>
+        <div class="kpi-row">
+          <div class="kpi-label"><span class="status-dot live"></span>Sales pipeline tracked</div>
+          <div class="kpi-value">$195,237</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-label"><span class="status-dot live"></span>Lead-to-close conversion</div>
+          <div class="kpi-value">37.4%</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-label"><span class="status-dot live"></span>Inventory units monitored</div>
+          <div class="kpi-value">67 units</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-label"><span class="status-dot live"></span>Renewal alerts sent in advance</div>
+          <div class="kpi-value">14 days</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="wrap">
+    <div class="ticker-item"><div class="tv">3</div><div class="tl">end-to-end systems designed</div></div>
+    <div class="ticker-item"><div class="tv">$195K+</div><div class="tl">in sales activity tracked automatically</div></div>
+    <div class="ticker-item"><div class="tv">₱8,030.99</div><div class="tl">live inventory value calculated in real time</div></div>
+    <div class="ticker-item"><div class="tv">20</div><div class="tl">tool categories standardized in one tracker</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> About</div>
+      <h2>From civil engineering to executive operations.</h2>
+      <p>I didn't start in operations — I started in Civil Engineering, where I learned to read a problem structurally before touching a single formula. That habit followed me: I still take businesses apart the same way I once took apart load calculations — piece by piece, until I understand exactly what's holding things up and what's about to break.</p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3>Why I moved into operations</h3>
+        <p style="color:var(--ink-soft); margin-top:12px; font-size:15.5px;">Engineering training builds three habits that transfer directly into executive support: precision, documentation, and the instinct to design a repeatable process instead of solving the same problem twice. I found I enjoyed applying that thinking to businesses more than to structures — building the spreadsheet, the tracker, or the automation that quietly keeps an operation from falling behind.</p>
+      </div>
+      <div>
+        <h3>How I work now</h3>
+        <p style="color:var(--ink-soft); margin-top:12px; font-size:15.5px;">Today I combine traditional executive assistant work — organization, documentation, follow-through — with AI-assisted systems building. I use tools like Google Sheets, Google Apps Script, and AI assistants to design dashboards and automations that reduce manual, repetitive work and give business owners a clear, current view of what's happening in their operation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> What I Do</div>
+      <h2>Executive support, backed by systems thinking.</h2>
+      <p>I split my work between the traditional responsibilities of an Executive Assistant and the operational systems that make those responsibilities scale.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon">✦</div>
+        <h3>Executive & Operations Support</h3>
+        <p>Day-to-day organization, documentation, and follow-through that keeps a founder's priorities moving without things falling through the cracks.</p>
+      </div>
+      <div class="card">
+        <div class="icon">▦</div>
+        <h3>Systems & Process Design</h3>
+        <p>Mapping messy, manual workflows into structured, repeatable systems — the kind that still make sense six months later, to someone who isn't me.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⟳</div>
+        <h3>AI-Assisted Automation</h3>
+        <p>Using AI and scripting (Google Apps Script) to remove repetitive manual steps — reminders, calculations, and reporting that used to require someone remembering to do them.</p>
+      </div>
+      <div class="card">
+        <div class="icon">▤</div>
+        <h3>Reporting & Dashboards</h3>
+        <p>Turning raw operational data — leads, sales, stock, subscriptions — into live dashboards with KPIs a founder can read in under a minute.</p>
+      </div>
+      <div class="card">
+        <div class="icon">≡</div>
+        <h3>Documentation & SOPs</h3>
+        <p>Writing down how things work so a system survives beyond the person who built it — a habit carried over directly from engineering documentation standards.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✓</div>
+        <h3>Process Improvement</h3>
+        <p>Finding the specific point where a manual process breaks down, and redesigning that point rather than patching around it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Core Skills</div>
+      <h2>What I bring to an operations seat.</h2>
+    </div>
+
+    <div class="skill-cat">
+      <h4>Executive & Administrative</h4>
+      <div class="chips">
+        <div class="chip">Organization & Prioritization</div>
+        <div class="chip">Documentation & SOP Writing</div>
+        <div class="chip">Stakeholder Communication</div>
+        <div class="chip">Attention to Detail</div>
+        <div class="chip">Follow-Through & Accountability</div>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h4>Operations & Systems</h4>
+      <div class="chips">
+        <div class="chip">Process Mapping</div>
+        <div class="chip">Workflow Design</div>
+        <div class="chip">Data Organization</div>
+        <div class="chip">KPI & Reporting Design</div>
+        <div class="chip">Inventory & Sales Operations</div>
+        <div class="chip">Systems Troubleshooting</div>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h4>Analytical (from Engineering)</h4>
+      <div class="chips">
+        <div class="chip">Structured Problem-Solving</div>
+        <div class="chip">Quantitative Analysis</div>
+        <div class="chip">Technical Documentation</div>
+        <div class="chip">Precision & Accuracy Under Detail</div>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h4>AI & Automation</h4>
+      <div class="chips">
+        <div class="chip">AI-Assisted System Design</div>
+        <div class="chip">Google Apps Script Automation</div>
+        <div class="chip">Formula-Based Workflow Logic</div>
+        <div class="chip">Dashboard Automation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> AI Tools & Software</div>
+      <h2>What I actually build with.</h2>
+      <p>Every tool below was used to build one of the systems in this portfolio — not listed for the sake of a longer list.</p>
+    </div>
+
+    <div class="tool-row">
+      <div>
+        <div class="tool-name">Google Sheets</div>
+        <div class="tool-tag">Primary Build Tool</div>
+      </div>
+      <div class="tool-desc">The foundation of all three systems in this portfolio — used for formula-driven calculations, data validation dropdowns, conditional formatting, filtered views, and native charting across live dashboards.</div>
+    </div>
+    <div class="tool-row">
+      <div>
+        <div class="tool-name">Google Apps Script</div>
+        <div class="tool-tag">Automation Layer</div>
+      </div>
+      <div class="tool-desc">Used to extend Sheets beyond formulas — specifically to trigger automatic reminder emails ahead of subscription renewals, removing the need for manual date-checking.</div>
+    </div>
+    <div class="tool-row">
+      <div>
+        <div class="tool-name">AI Assistants (ChatGPT / Claude)</div>
+        <div class="tool-tag">System Design Partner</div>
+      </div>
+      <div class="tool-desc">Used throughout the build process to structure formula logic, troubleshoot automation, and pressure-test system design before rolling it out — AI as a thinking partner, not a black box.</div>
+    </div>
+    <div class="tool-row">
+      <div>
+        <div class="tool-name">Google Workspace (Docs, Drive, Calendar, Gmail)</div>
+        <div class="tool-tag">Everyday Operations</div>
+      </div>
+      <div class="tool-desc">Day-to-day environment for documentation, file organization, and communication that supports the systems above.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS INDEX -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Featured Projects</div>
+      <h2>Three systems. Three operational problems solved.</h2>
+      <p>Each project started as a manual, error-prone process and ended as a live, self-updating system. Full case studies below.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="proj-card">
+        <div class="proj-media">
+          <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
+            <text x="14" y="20" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A8F9C" letter-spacing="0.06em">BEST-SELLING PRODUCTS — LIVE</text>
+            <line x1="14" y1="140" x2="386" y2="140" stroke="#E4E7EC" stroke-width="1"/>
+            <rect x="20" y="24" width="46" height="116" rx="6" fill="#0E6E67" fill-opacity="1"/>
+            <text x="43" y="18" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#12141A">₱840</text>
+            <rect x="86" y="54" width="46" height="86" rx="6" fill="#0E6E67" fill-opacity="0.8"/>
+            <text x="109" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#12141A">₱630</text>
+            <rect x="152" y="54" width="46" height="86" rx="6" fill="#0E6E67" fill-opacity="0.65"/>
+            <text x="175" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#12141A">₱630</text>
+            <rect x="218" y="86" width="46" height="54" rx="6" fill="#0E6E67" fill-opacity="0.5"/>
+            <text x="241" y="80" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#12141A">₱420</text>
+            <rect x="284" y="114" width="46" height="26" rx="6" fill="#0E6E67" fill-opacity="0.35"/>
+            <text x="307" y="108" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#12141A">₱210</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tag">Retail Operations — LXTR Perfume</div>
+          <h3>AI-Powered Inventory Management System</h3>
+          <p style="color:var(--ink-soft); font-size:14.5px;">A live inventory system built for LXTR Perfume, a fragrance retail business — tracking stock, cost, and sales in real time.</p>
+          <div class="proj-stats">
+            <div>Stock Value<span>₱8,030.99</span></div>
+            <div>Units Tracked<span>67</span></div>
+            <div>Stockouts<span>0</span></div>
+          </div>
+          <a href="#case-inventory" class="proj-link">Read case study →</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-media">
+          <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
+            <text x="14" y="20" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A8F9C" letter-spacing="0.06em">MONTHLY REVENUE — 2026</text>
+            <line x1="14" y1="140" x2="386" y2="140" stroke="#E4E7EC" stroke-width="1"/>
+            <polyline points="30,116 83,118 136,30 189,80 242,92 295,72 348,105" fill="none" stroke="#0E6E67" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="30,116 83,118 136,30 189,80 242,92 295,72 348,105 348,140 30,140" fill="#0E6E67" fill-opacity="0.10"/>
+            <circle cx="136" cy="30" r="4.5" fill="#0E6E67"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tag">Sales Operations <span class="project-note">Self-Initiated</span></div>
+          <h3>Automated Sales & CRM Analytics Dashboard</h3>
+          <p style="color:var(--ink-soft); font-size:14.5px;">A self-initiated CRM dashboard project turning raw lead and deal data into live KPIs, funnels, and trends.</p>
+          <div class="proj-stats">
+            <div>Revenue Tracked<span>$195,237</span></div>
+            <div>Conversion<span>37.4%</span></div>
+            <div>Deals<span>65</span></div>
+          </div>
+          <a href="#case-sales" class="proj-link">Read case study →</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-media">
+          <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
+            <text x="14" y="20" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A8F9C" letter-spacing="0.06em">STATUS LEGEND</text>
+            <circle cx="26" cy="42" r="6" fill="#1F9D55"/><text x="42" y="46" font-family="Inter, sans-serif" font-size="12" fill="#12141A">Active</text>
+            <circle cx="26" cy="68" r="6" fill="#B8860B"/><text x="42" y="72" font-family="Inter, sans-serif" font-size="12" fill="#12141A">Trial</text>
+            <circle cx="26" cy="94" r="6" fill="#B4433A"/><text x="42" y="98" font-family="Inter, sans-serif" font-size="12" fill="#12141A">Expired</text>
+            <circle cx="26" cy="120" r="6" fill="#8A8F9C"/><text x="42" y="124" font-family="Inter, sans-serif" font-size="12" fill="#12141A">Cancelled</text>
+            <rect x="230" y="58" width="150" height="26" rx="13" fill="#E4F1EF"/>
+            <text x="305" y="75" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#0A524C">🔔 Reminder: 14d out</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tag">Vendor & Software Operations <span class="project-note">Self-Initiated</span></div>
+          <h3>Subscription & Software Tracker</h3>
+          <p style="color:var(--ink-soft); font-size:14.5px;">A self-initiated system for tracking every software subscription a business relies on, with automatic renewal reminders.</p>
+          <div class="proj-stats">
+            <div>Categories<span>20</span></div>
+            <div>Status Types<span>8</span></div>
+            <div>Alert Window<span>14d</span></div>
+          </div>
+          <a href="#case-subscriptions" class="proj-link">Read case study →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDY 1: INVENTORY ============ -->
+<section class="case" id="case-inventory">
+  <div class="wrap">
+    <div class="case-head">
+      <div>
+        <div class="case-num">CASE STUDY 01 / 03</div>
+        <h2>AI-Powered Inventory Management System</h2>
+      </div>
+      <div class="case-stats-row">
+        <div class="stat"><span>₱14,070</span><div>Total retail value</div></div>
+        <div class="stat"><span>₱1,475</span><div>Gross profit, live</div></div>
+        <div class="stat"><span>0</span><div>Low-stock or out-of-stock items</div></div>
+      </div>
+    </div>
+
+    <div class="case-visual">
+      <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="30" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A8F9C" letter-spacing="0.06em">LXTR PERFUME — BEST-SELLING PRODUCTS (LIVE)</text>
+        <line x1="24" y1="180" x2="776" y2="180" stroke="#E4E7EC" stroke-width="1"/>
+        <rect x="40" y="40" width="90" height="140" rx="8" fill="#0E6E67" fill-opacity="1"/>
+        <text x="85" y="32" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#12141A">₱840</text>
+        <text x="85" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565C6B">Miss Dior BB</text>
+        <rect x="170" y="75" width="90" height="105" rx="8" fill="#0E6E67" fill-opacity="0.8"/>
+        <text x="215" y="67" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#12141A">₱630</text>
+        <text x="215" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565C6B">CK One</text>
+        <rect x="300" y="75" width="90" height="105" rx="8" fill="#0E6E67" fill-opacity="0.65"/>
+        <text x="345" y="67" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#12141A">₱630</text>
+        <text x="345" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565C6B">Elizabeth Arden GT</text>
+        <rect x="430" y="112" width="90" height="68" rx="8" fill="#0E6E67" fill-opacity="0.5"/>
+        <text x="475" y="104" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#12141A">₱420</text>
+        <text x="475" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565C6B">Bvlgari Amethyste</text>
+        <rect x="560" y="146" width="90" height="34" rx="8" fill="#0E6E67" fill-opacity="0.35"/>
+        <text x="605" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#12141A">₱210</text>
+        <text x="605" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565C6B">Lacoste White</text>
+        <rect x="690" y="40" width="86" height="140" rx="8" fill="none" stroke="#E4E7EC" stroke-dasharray="4 4"/>
+        <text x="733" y="115" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A8F9C">0 Low<tspan x="733" dy="14">Stock</tspan></text>
+      </svg>
+    </div>
+
+    <div class="case-section">
+      <h3>Project Overview</h3>
+      <p>A full inventory management system built in Google Sheets for LXTR Perfume, a fragrance retail business, tracking every product from purchase to sale. The system replaced manual stock-counting with a live dashboard that recalculates inventory value, retail value, revenue, and gross profit the moment a purchase or sale is logged.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="case-section">
+        <h3>The Problem</h3>
+        <p>Retail inventory is easy to lose track of once a catalog grows past a handful of products. Without a system, stock counts, reorder points, and profit margins live in someone's memory or in disconnected notes — which means stockouts, overstock, and no clear read on which products are actually worth reordering.</p>
+      </div>
+      <div class="case-section">
+        <h3>My Solution</h3>
+        <p>I designed a single source of truth: a Product Master sheet holding SKU-level cost and price data, feeding into separate Purchases and Sales logs, which in turn feed a live Inventory sheet and a summary Dashboard — so every number on the dashboard traces back to an actual logged transaction, not a manual entry.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3>Workflow</h3>
+      <div class="workflow-steps">
+        <div class="wf-step">
+          <div class="wf-num">01</div>
+          <div><div class="wf-title">Product Master as the source of truth</div><div class="wf-desc">Every product is defined once — cost, retail price, and minimum stock level — so downstream calculations never have to guess at a number.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">02</div>
+          <div><div class="wf-title">Purchases log stock coming in</div><div class="wf-desc">Every restock is entered as a line item, tied back to a product via SKU.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">03</div>
+          <div><div class="wf-title">Sales log stock going out</div><div class="wf-desc">Every sale is logged the same way, capturing quantity sold and revenue per product.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">04</div>
+          <div><div class="wf-title">Inventory sheet nets the two automatically</div><div class="wf-desc">Current stock per product is calculated as purchases minus sales — no manual counting required.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">05</div>
+          <div><div class="wf-title">Dashboard surfaces what matters</div><div class="wf-desc">Total inventory value, retail value, revenue, gross profit, and any low-stock or out-of-stock items are pulled to the top automatically.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="case-section">
+        <h3>Tools Used</h3>
+        <div class="tag-row">
+          <div class="chip">Google Sheets</div>
+          <div class="chip">SUMIFS / conditional formulas</div>
+          <div class="chip">Data validation</div>
+          <div class="chip">Conditional formatting</div>
+          <div class="chip">AI-assisted formula design</div>
+        </div>
+      </div>
+      <div class="case-section">
+        <h3>Automation Logic</h3>
+        <p>Stock levels are calculated by netting logged purchases against logged sales per SKU, rather than requiring a manual count. Low-stock and out-of-stock flags compare live stock against each product's defined minimum level, so a product only appears on the "needs attention" list when it actually needs attention. Gross profit is calculated automatically from the cost and price already defined in the Product Master, so no one has to run that math by hand.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3>Key Features</h3>
+      <ul>
+        <li>Live dashboard showing total inventory value, total units in stock, total retail value, total sales revenue, and total gross profit</li>
+        <li>Automatic low-stock and out-of-stock alerts, benchmarked against a per-product minimum level</li>
+        <li>Best-selling products ranked automatically by quantity sold and revenue</li>
+        <li>Separate Purchases, Sales, Inventory, and Reports sheets, so raw data entry never touches the dashboard logic directly</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <b>Business value:</b> The business owner can check one dashboard and know, without opening a single log sheet, what's low, what's selling, and what the current stock is actually worth — turning inventory management from a periodic manual audit into a live, always-current view.
+    </div>
+
+    <div class="two-col" style="margin-top:44px;">
+      <div class="case-section">
+        <h3>Skills Demonstrated</h3>
+        <ul>
+          <li>Systems design (separating data entry from reporting)</li>
+          <li>Formula-based automation</li>
+          <li>Retail operations logic (cost vs. retail vs. margin)</li>
+          <li>Dashboard design for non-technical end users</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h3>Lessons Learned</h3>
+        <p>The hardest part wasn't the formulas — it was deciding what the dashboard should <i>not</i> show. Early versions surfaced every number available; the final version only surfaces what changes a decision (reorder, price, or promote). Restraint made the system more useful, not less.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDY 2: SALES ============ -->
+<section class="case" id="case-sales" style="background:var(--surface);">
+  <div class="wrap">
+    <div class="case-head">
+      <div>
+        <div class="case-num">CASE STUDY 02 / 03</div>
+        <h2>Automated Sales & CRM Analytics Dashboard <span class="project-note">Self-Initiated Project</span></h2>
+      </div>
+      <div class="case-stats-row">
+        <div class="stat"><span>$195,237</span><div>Total revenue tracked</div></div>
+        <div class="stat"><span>37.4%</span><div>Lead-to-close conversion</div></div>
+        <div class="stat"><span>65</span><div>Closed deals logged</div></div>
+      </div>
+    </div>
+
+    <div class="case-visual">
+      <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="26" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A8F9C" letter-spacing="0.06em">MONTHLY REVENUE TREND — 2026</text>
+        <line x1="24" y1="130" x2="776" y2="130" stroke="#E4E7EC" stroke-width="1"/>
+        <polyline points="60,105 176,108 292,30 408,80 524,92 640,72 756,102" fill="none" stroke="#0E6E67" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon points="60,105 176,108 292,30 408,80 524,92 640,72 756,102 756,130 60,130" fill="#0E6E67" fill-opacity="0.10"/>
+        <circle cx="292" cy="30" r="5" fill="#0E6E67"/>
+        <text x="292" y="20" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#12141A">₱34,494 peak — Mar</text>
+        <text x="60" y="150" font-family="Inter, sans-serif" font-size="10.5" fill="#8A8F9C">Jan</text>
+        <text x="756" y="150" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" fill="#8A8F9C">Jul</text>
+
+        <text x="24" y="184" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A8F9C" letter-spacing="0.06em">CONVERSION FUNNEL</text>
+        <rect x="24" y="196" width="440" height="14" rx="7" fill="#0E6E67"/><text x="474" y="207" font-family="Inter, sans-serif" font-size="11" fill="#565C6B">Lead — 99 (100%)</text>
+        <rect x="24" y="216" width="382" height="14" rx="7" fill="#0E6E67" fill-opacity="0.8"/><text x="416" y="227" font-family="Inter, sans-serif" font-size="11" fill="#565C6B">Contacted — 86 (86.9%)</text>
+        <rect x="24" y="236" width="280" height="14" rx="7" fill="#0E6E67" fill-opacity="0.6"/><text x="314" y="247" font-family="Inter, sans-serif" font-size="11" fill="#565C6B">Qualified — 63 (63.6%)</text>
+      </svg>
+    </div>
+
+    <div class="case-section">
+      <h3>Project Overview</h3>
+      <p>A self-initiated CRM analytics dashboard built in Google Sheets to demonstrate sales-operations reporting — turning lead and deal activity into a live, filterable view of business performance across 99 leads and 65 closed deals, using a realistic multi-year, multi-product dataset I built to model how a real sales pipeline behaves.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="case-section">
+        <h3>The Problem</h3>
+        <p>Sales data is only useful if someone can answer questions about it quickly: which month was strongest, which product is actually driving revenue, where leads are dropping out of the funnel. Without a structured dashboard, those answers require manually filtering a raw spreadsheet every time a question comes up.</p>
+      </div>
+      <div class="case-section">
+        <h3>My Solution</h3>
+        <p>I built a dashboard with dropdown-driven filters — Year, Month, Sales Rep, Product, Sales Status — sitting on top of separate Leads and Sales data sheets. Changing a dropdown instantly recalculates filtered revenue, deal count, and average deal size, so anyone can answer a specific question without touching a single formula.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3>Workflow</h3>
+      <div class="workflow-steps">
+        <div class="wf-step">
+          <div class="wf-num">01</div>
+          <div><div class="wf-title">Raw activity captured separately</div><div class="wf-desc">Leads and Sales are logged on their own sheets, keeping raw data entry independent from reporting logic.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">02</div>
+          <div><div class="wf-title">A Helpers sheet does the heavy lifting</div><div class="wf-desc">Intermediate calculations — monthly totals, product rollups, funnel stage counts — are computed once, off to the side, so the dashboard stays fast and readable.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">03</div>
+          <div><div class="wf-title">Filters recompute the top-line KPIs</div><div class="wf-desc">Selecting a Year, Sales Rep, Product, or Status recalculates Filtered Revenue, Filtered Deals, and Filtered Average Deal instantly.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">04</div>
+          <div><div class="wf-title">Trends render automatically</div><div class="wf-desc">Monthly and yearly revenue, a revenue heatmap by month, and top-product rankings are all chart-fed from the same underlying data — no manual chart rebuilding.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">05</div>
+          <div><div class="wf-title">The funnel tells its own story</div><div class="wf-desc">Lead → Contacted → Qualified → Proposal → Won is tracked stage by stage, so drop-off is visible at a glance instead of buried in raw records.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="case-section">
+        <h3>Tools Used</h3>
+        <div class="tag-row">
+          <div class="chip">Google Sheets</div>
+          <div class="chip">Data validation dropdowns</div>
+          <div class="chip">SUMIFS / COUNTIFS logic</div>
+          <div class="chip">Native charting</div>
+          <div class="chip">Helper-sheet architecture</div>
+        </div>
+      </div>
+      <div class="case-section">
+        <h3>Automation Logic</h3>
+        <p>KPI cards — total leads, total deals, converted leads, conversion rate, average order value, average revenue per lead, revenue this month and this year, highest sales month, best-performing product, and best sales day — are all formula-driven off the Leads and Sales sheets, so they update the moment new activity is logged. The conversion funnel and product rankings recompute the same way, with no manual pivot-table rebuilding required.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3>Key Features</h3>
+      <ul>
+        <li>Instant-filter dashboard (Year / Month / Sales Rep / Product / Sales Status)</li>
+        <li>Full KPI suite: revenue, deals, conversion rate, average deal size, best month, best product, best sales day</li>
+        <li>Five-stage conversion funnel with stage-by-stage lead counts</li>
+        <li>Revenue heatmap by month and year, plus a ranked product-performance table</li>
+        <li>Sales-status breakdown (Closed Won, Closed Lost, In Negotiation, Refunded)</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <b>Business value:</b> Anyone reviewing the business — not just the person who built the sheet — can filter to a specific rep, product, or period and get a trustworthy answer in seconds, turning "let me pull that together" into "it's already there."
+    </div>
+
+    <div class="two-col" style="margin-top:44px;">
+      <div class="case-section">
+        <h3>Skills Demonstrated</h3>
+        <ul>
+          <li>Dashboard architecture (separating raw data, helper logic, and presentation)</li>
+          <li>KPI design for non-technical stakeholders</li>
+          <li>Funnel and conversion analysis</li>
+          <li>Sales operations reporting</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h3>Lessons Learned</h3>
+        <p>A dashboard that's technically correct but slow to read is still a bad dashboard. Splitting calculations into a dedicated Helpers sheet kept every formula simpler and the actual dashboard sheet fast to scan — a small architectural decision that made the whole system more maintainable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDY 3: SUBSCRIPTIONS ============ -->
+<section class="case" id="case-subscriptions">
+  <div class="wrap">
+    <div class="case-head">
+      <div>
+        <div class="case-num">CASE STUDY 03 / 03</div>
+        <h2>Subscription & Software Tracker <span class="project-note">Self-Initiated Project</span></h2>
+      </div>
+      <div class="case-stats-row">
+        <div class="stat"><span>20</span><div>Tool categories standardized</div></div>
+        <div class="stat"><span>8</span><div>Status states tracked</div></div>
+        <div class="stat"><span>14 days</span><div>Advance renewal reminder</div></div>
+      </div>
+    </div>
+
+    <div class="case-visual">
+      <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="26" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A8F9C" letter-spacing="0.06em">STATUS LEGEND — TOOL TRACKER</text>
+        <circle cx="40" cy="56" r="7" fill="#1F9D55"/><text x="58" y="61" font-family="Inter, sans-serif" font-size="13" fill="#12141A">Active</text>
+        <circle cx="40" cy="86" r="7" fill="#B8860B"/><text x="58" y="91" font-family="Inter, sans-serif" font-size="13" fill="#12141A">Trial</text>
+        <circle cx="40" cy="116" r="7" fill="#C2703D"/><text x="58" y="121" font-family="Inter, sans-serif" font-size="13" fill="#12141A">Needs Review</text>
+        <circle cx="40" cy="146" r="7" fill="#B4433A"/><text x="58" y="151" font-family="Inter, sans-serif" font-size="13" fill="#12141A">Expired</text>
+        <circle cx="230" cy="56" r="7" fill="#8A8F9C"/><text x="248" y="61" font-family="Inter, sans-serif" font-size="13" fill="#12141A">Cancelled</text>
+        <circle cx="230" cy="86" r="7" fill="#6B7280"/><text x="248" y="91" font-family="Inter, sans-serif" font-size="13" fill="#12141A">Not In Use</text>
+        <circle cx="230" cy="116" r="7" fill="#3B6FA0"/><text x="248" y="121" font-family="Inter, sans-serif" font-size="13" fill="#12141A">Pending Setup</text>
+        <circle cx="230" cy="146" r="7" fill="#9AA0AC"/><text x="248" y="151" font-family="Inter, sans-serif" font-size="13" fill="#12141A">Archived</text>
+        <rect x="470" y="42" width="290" height="120" rx="10" fill="#E4F1EF"/>
+        <text x="500" y="75" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0A524C">🔔 Auto-reminder</text>
+        <text x="500" y="100" font-family="Inter, sans-serif" font-size="12" fill="#0A524C">Sent 14 days before</text>
+        <text x="500" y="120" font-family="Inter, sans-serif" font-size="12" fill="#0A524C">renewal — no manual</text>
+        <text x="500" y="140" font-family="Inter, sans-serif" font-size="12" fill="#0A524C">date-checking needed</text>
+      </svg>
+    </div>
+
+    <div class="case-section">
+      <h3>Project Overview</h3>
+      <p>A self-initiated tracker built in Google Sheets and Google Apps Script to demonstrate vendor and subscription management — organizing every software tool a business might rely on across 20 categories, from CRM and Advertising to AI Tools and Development, with automatic email reminders ahead of renewal dates.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="case-section">
+        <h3>The Problem</h3>
+        <p>Growing businesses accumulate software fast — a CRM here, an automation tool there — and renewal dates are easy to lose track of across dozens of vendors. Missed cancellations lead to paying for tools nobody uses; missed renewals lead to a tool shutting off mid-project. Both are avoidable, and both usually come down to nobody having one place to check.</p>
+      </div>
+      <div class="case-section">
+        <h3>My Solution</h3>
+        <p>I built a Lists tab defining a controlled vocabulary — 20 tool categories, 8 status states (Active, Trial, Needs Review, Expired, Cancelled, Not In Use, Pending Setup, Archived), subscription types, and billing frequencies — feeding standardized dropdowns into a central Tool Tracker sheet, plus a Google Apps Script that emails a reminder 14 days before each renewal date.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3>Workflow</h3>
+      <div class="workflow-steps">
+        <div class="wf-step">
+          <div class="wf-num">01</div>
+          <div><div class="wf-title">Define the vocabulary once</div><div class="wf-desc">Categories, statuses, subscription types, and billing frequencies are defined on a dedicated Lists tab, so every entry uses the same language instead of free-text notes.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">02</div>
+          <div><div class="wf-title">Log every tool consistently</div><div class="wf-desc">Each subscription is tagged by category, status, type, and billing frequency through dropdowns pulled from the Lists tab, keeping data entry fast and consistent.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">03</div>
+          <div><div class="wf-title">Status color-coding surfaces risk at a glance</div><div class="wf-desc">A status legend (Active, Trial, Expired, Cancelled, and so on) is color-coded, so a scan of the tracker shows what needs attention without reading every row.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">04</div>
+          <div><div class="wf-title">A script watches renewal dates</div><div class="wf-desc">Google Apps Script checks upcoming renewal dates and automatically sends a reminder email 14 days ahead — so renewal decisions happen on purpose, not by default.</div></div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">05</div>
+          <div><div class="wf-title">Retired tools move to Archive</div><div class="wf-desc">A dedicated Archive tab keeps discontinued subscriptions out of the active tracker without deleting the history.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="case-section">
+        <h3>Tools Used</h3>
+        <div class="tag-row">
+          <div class="chip">Google Sheets</div>
+          <div class="chip">Google Apps Script</div>
+          <div class="chip">Data validation</div>
+          <div class="chip">Conditional formatting</div>
+          <div class="chip">Time-based triggers</div>
+        </div>
+      </div>
+      <div class="case-section">
+        <h3>Automation Logic</h3>
+        <p>The Apps Script layer is what turns this from a tracker into a system: rather than someone needing to remember to check renewal dates, the script compares each subscription's renewal date against today's date and fires an email automatically once a tool is 14 days out from renewal — removing the manual date-checking step entirely.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3>Key Features</h3>
+      <ul>
+        <li>Standardized taxonomy across 20 tool categories and 8 status states</li>
+        <li>Color-coded status legend for at-a-glance review</li>
+        <li>Automatic email reminders 14 days ahead of subscription renewal</li>
+        <li>Separate Dashboard, Archive, and Instructions tabs, so the system is usable by someone other than its builder</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <b>Business value:</b> Software spend stops being something the business finds out about after the fact. Renewal decisions — keep, downgrade, or cancel — get made intentionally, ahead of the charge, instead of by default.
+    </div>
+
+    <div class="two-col" style="margin-top:44px;">
+      <div class="case-section">
+        <h3>Skills Demonstrated</h3>
+        <ul>
+          <li>Taxonomy and data-standardization design</li>
+          <li>Google Apps Script automation</li>
+          <li>Vendor and subscription management</li>
+          <li>System documentation for handoff</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h3>Lessons Learned</h3>
+        <p>A tracker is only as good as the categories behind it. Building the Lists tab first — before a single tool was logged — meant every entry afterward was consistent, which is what made the automation reliable. Structure has to come before automation, not after.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> My Process</div>
+      <h2>The same process, three times over.</h2>
+      <p>Every system in this portfolio was built the same way — the approach doesn't change; only the operational problem does.</p>
+    </div>
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-index">01</div>
+        <div><h3>Diagnose the manual process</h3><p>Start by understanding exactly how the work is currently being done by hand — what's tracked, what's missed, and where the bottleneck actually lives.</p></div>
+      </div>
+      <div class="process-item">
+        <div class="process-index">02</div>
+        <div><h3>Map the real workflow</h3><p>Trace the process from first input to final decision, so the system mirrors how the business actually operates, not an idealized version of it.</p></div>
+      </div>
+      <div class="process-item">
+        <div class="process-index">03</div>
+        <div><h3>Design the structure first</h3><p>Define categories, statuses, and data relationships before building a single formula — structure is what makes automation reliable later.</p></div>
+      </div>
+      <div class="process-item">
+        <div class="process-index">04</div>
+        <div><h3>Automate the repetitive parts</h3><p>Use formulas, scripts, and AI-assisted logic to remove the steps a person shouldn't have to do by hand — calculations, flags, reminders.</p></div>
+      </div>
+      <div class="process-item">
+        <div class="process-index">05</div>
+        <div><h3>Test against real data</h3><p>Run the system against actual numbers, not sample data, to confirm it holds up under real, messy conditions.</p></div>
+      </div>
+      <div class="process-item">
+        <div class="process-index">06</div>
+        <div><h3>Document for handoff</h3><p>Write the system down clearly enough that someone else can maintain it — a habit carried straight over from engineering documentation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<div class="divider-band" id="results">
+  <div class="wrap">
+    <div class="divider-stat"><span>3</span><div>End-to-end operational systems designed and built</div></div>
+    <div class="divider-stat"><span>$195K+</span><div>In sales activity tracked automatically, live</div></div>
+    <div class="divider-stat"><span>0</span><div>Stockouts across a 67-unit live inventory</div></div>
+    <div class="divider-stat"><span>14-day</span><div>Automated lead time on every subscription renewal</div></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div>
+        <div class="eyebrow" style="background:rgba(255,255,255,0.08); color:#9fe8e0;"><span class="dot" style="background:#4CD9C9;"></span> Let's talk</div>
+        <h2>Looking for an Executive Assistant<br>who builds systems, not just to-do lists?</h2>
+        <p>I'm currently open to Executive Assistant, Executive Operations, Operations Coordinator, and AI Workflow Automation roles at growing startups.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:edostrishamae@gmail.com">✉ edostrishamae@gmail.com</a>
+        <a href="https://www.linkedin.com/in/trisha-mae-edos" target="_blank" rel="noopener">LinkedIn Profile</a>
+        <a href="#">📍 Pampanga, Philippines — open to remote roles</a>
+        <a href="#">↗ Full project files & spreadsheets on request</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 — Built with Google Sheets, Apps Script, and a lot of attention to detail.
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, { threshold: 0.15 });
+  els.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
