@@ -197,14 +197,20 @@
   .wf-desc{ color: var(--ink-soft); font-size:14.5px; }
   .tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 4px; }
   .tag-row .chip{ font-size:12.5px; padding:6px 12px; }
-  /* Proof links (GitHub / Live Sheet) */
-  .proof-links{ display:flex; gap:14px; margin-top:44px; flex-wrap:wrap; }
-  .proof-link{
+  /* Demo links (Live Google Sheets demo) */
+  .demo-block{ margin-top:44px; }
+  .demo-links{ display:flex; gap:14px; flex-wrap:wrap; }
+  .demo-link{
     display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:10px;
-    font-size:14px; font-weight:600; border:1px solid var(--border); background:var(--surface);
+    font-size:14px; font-weight:600; border:1px solid var(--ink); background:var(--ink); color:#fff;
+    transition: opacity 0.15s ease, transform 0.15s ease;
   }
-  .proof-link.primary{ background:var(--ink); color:#fff; border-color:var(--ink); }
-  .proof-link:hover{ opacity:0.85; }
+  .demo-link:hover{ opacity:0.85; transform: translateY(-1px); }
+  .demo-link svg{ width:13px; height:13px; opacity:0.85; }
+  .demo-note{
+    margin-top:14px; font-size:12.5px; color: var(--ink-faint); max-width: 520px; line-height:1.5;
+    font-style: italic;
+  }
   .divider-band{
     background: var(--ink); color: #fff; padding: 90px 0; border-top:none;
   }
@@ -265,21 +271,21 @@
         <div class="location-line">📍 Pampanga, Philippines — open to remote roles</div>
       </div>
       <div class="hero-panel fade-in">
-        <div class="panel-title">Systems I've Built — Live Metrics</div>
+        <div class="panel-title">What These Systems Do</div>
         <div class="kpi-row">
-          <div class="kpi-label"><span class="status-dot live"></span>Sales pipeline tracked</div>
-          <div class="kpi-value">$195,237</div>
+          <div class="kpi-label"><span class="status-dot live"></span>End-to-end automation systems built</div>
+          <div class="kpi-value">3</div>
         </div>
         <div class="kpi-row">
-          <div class="kpi-label"><span class="status-dot live"></span>Lead-to-close conversion</div>
-          <div class="kpi-value">37.4%</div>
+          <div class="kpi-label"><span class="status-dot live"></span>Dashboard reporting</div>
+          <div class="kpi-value">Real-time</div>
         </div>
         <div class="kpi-row">
-          <div class="kpi-label"><span class="status-dot live"></span>Inventory units monitored</div>
-          <div class="kpi-value">67 units</div>
+          <div class="kpi-label"><span class="status-dot live"></span>Inventory tracking</div>
+          <div class="kpi-value">Automated</div>
         </div>
         <div class="kpi-row">
-          <div class="kpi-label"><span class="status-dot live"></span>Renewal alerts sent in advance</div>
+          <div class="kpi-label"><span class="status-dot live"></span>Renewal reminders sent in advance</div>
           <div class="kpi-value">14 days</div>
         </div>
       </div>
@@ -290,8 +296,8 @@
 <div class="ticker">
   <div class="wrap">
     <div class="ticker-item"><div class="tv">3</div><div class="tl">end-to-end systems designed</div></div>
-    <div class="ticker-item"><div class="tv">$195K+</div><div class="tl">in sales activity tracked automatically</div></div>
-    <div class="ticker-item"><div class="tv">₱8,030.99</div><div class="tl">live inventory value calculated in real time</div></div>
+    <div class="ticker-item"><div class="tv">Dynamic</div><div class="tl">KPI dashboard reporting</div></div>
+    <div class="ticker-item"><div class="tv">₱8,030.99</div><div class="tl">live inventory value — real client project</div></div>
     <div class="ticker-item"><div class="tv">20</div><div class="tl">tool categories standardized in one tracker</div></div>
   </div>
 </div>
@@ -496,9 +502,9 @@
           <h3>Automated Sales & CRM Analytics Dashboard</h3>
           <p style="color:var(--ink-soft); font-size:14.5px;">A self-initiated CRM dashboard project turning raw lead and deal data into live KPIs, funnels, and trends.</p>
           <div class="proj-stats">
-            <div>Revenue Tracked<span>$195,237</span></div>
-            <div>Conversion<span>37.4%</span></div>
-            <div>Deals<span>65</span></div>
+            <div>Filter Dimensions<span>5</span></div>
+            <div>Automated KPIs<span>10+</span></div>
+            <div>Dataset<span>Multi-Year</span></div>
           </div>
           <a href="#case-sales" class="proj-link">Read case study →</a>
         </div>
@@ -573,11 +579,11 @@
     </div>
     <div class="two-col">
       <div class="case-section">
-        <h3>The Problem</h3>
+        <h3>Business Problem</h3>
         <p>Retail inventory is easy to lose track of once a catalog grows past a handful of products. Without a system, stock counts, reorder points, and profit margins live in someone's memory or in disconnected notes — which means stockouts, overstock, and no clear read on which products are actually worth reordering.</p>
       </div>
       <div class="case-section">
-        <h3>My Solution</h3>
+        <h3>Solution</h3>
         <p>I designed a single source of truth: a Product Master sheet holding SKU-level cost and price data, feeding into separate Purchases and Sales logs, which in turn feed a live Inventory sheet and a summary Dashboard — so every number on the dashboard traces back to an actual logged transaction, not a manual entry.</p>
       </div>
     </div>
@@ -632,7 +638,7 @@
       </ul>
     </div>
     <div class="callout">
-      <b>Business value:</b> The business owner can check one dashboard and know, without opening a single log sheet, what's low, what's selling, and what the current stock is actually worth — turning inventory management from a periodic manual audit into a live, always-current view.
+      <b>Business Impact:</b> The business owner can check one dashboard and know, without opening a single log sheet, what's low, what's selling, and what the current stock is actually worth — turning inventory management from a periodic manual audit into a live, always-current view.
     </div>
     <div class="two-col" style="margin-top:44px;">
       <div class="case-section">
@@ -649,9 +655,14 @@
         <p>The hardest part wasn't the formulas — it was deciding what the dashboard should <i>not</i> show. Early versions surfaced every number available; the final version only surfaces what changes a decision (reorder, price, or promote). Restraint made the system more useful, not less.</p>
       </div>
     </div>
-    <div class="proof-links">
-      <a href="https://github.com/edostrishamae/lxtr-inventory-system" target="_blank" rel="noopener" class="proof-link primary">↗ View on GitHub</a>
-      <a href="https://docs.google.com/spreadsheets/d/1dgXNZ799nKNc3QW029wLR13YI4xV9x1iguwIko44Imc/edit?usp=sharing" target="_blank" rel="noopener" class="proof-link">📊 View Live Sheet</a>
+    <div class="demo-block">
+      <div class="demo-links">
+        <a href="https://docs.google.com/spreadsheets/d/1nCK6t8ekkK_0fVKpNfwKP_SocqHclCK9NWZJc6xXJvo/edit?usp=sharing" target="_blank" rel="noopener" class="demo-link">
+          View Live Demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+        </a>
+      </div>
+      <p class="demo-note">View-only demo with sample data. Sensitive business information has been removed to protect privacy while preserving the automation workflow.</p>
     </div>
   </div>
 </section>
@@ -664,9 +675,9 @@
         <h2>Automated Sales & CRM Analytics Dashboard <span class="project-note">Self-Initiated Project</span></h2>
       </div>
       <div class="case-stats-row">
-        <div class="stat"><span>$195,237</span><div>Total revenue tracked</div></div>
-        <div class="stat"><span>37.4%</span><div>Lead-to-close conversion</div></div>
-        <div class="stat"><span>65</span><div>Closed deals logged</div></div>
+        <div class="stat"><span>5</span><div>Filter dimensions (Year/Month/Rep/Product/Status)</div></div>
+        <div class="stat"><span>10+</span><div>Automated KPI metrics</div></div>
+        <div class="stat"><span>Multi-Year</span><div>Demo dataset modeled</div></div>
       </div>
     </div>
     <div class="case-visual">
@@ -691,11 +702,11 @@
     </div>
     <div class="two-col">
       <div class="case-section">
-        <h3>The Problem</h3>
+        <h3>Business Problem</h3>
         <p>Sales data is only useful if someone can answer questions about it quickly: which month was strongest, which product is actually driving revenue, where leads are dropping out of the funnel. Without a structured dashboard, those answers require manually filtering a raw spreadsheet every time a question comes up.</p>
       </div>
       <div class="case-section">
-        <h3>My Solution</h3>
+        <h3>Solution</h3>
         <p>I built a dashboard with dropdown-driven filters — Year, Month, Sales Rep, Product, Sales Status — sitting on top of separate Leads and Sales data sheets. Changing a dropdown instantly recalculates filtered revenue, deal count, and average deal size, so anyone can answer a specific question without touching a single formula.</p>
       </div>
     </div>
@@ -751,7 +762,7 @@
       </ul>
     </div>
     <div class="callout">
-      <b>Business value:</b> Anyone reviewing the business — not just the person who built the sheet — can filter to a specific rep, product, or period and get a trustworthy answer in seconds, turning "let me pull that together" into "it's already there."
+      <b>Business Impact:</b> Anyone reviewing the business — not just the person who built the sheet — can filter to a specific rep, product, or period and get a trustworthy answer in seconds, turning "let me pull that together" into "it's already there."
     </div>
     <div class="two-col" style="margin-top:44px;">
       <div class="case-section">
@@ -768,9 +779,14 @@
         <p>A dashboard that's technically correct but slow to read is still a bad dashboard. Splitting calculations into a dedicated Helpers sheet kept every formula simpler and the actual dashboard sheet fast to scan — a small architectural decision that made the whole system more maintainable.</p>
       </div>
     </div>
-    <div class="proof-links">
-      <a href="https://github.com/edostrishamae/sales-crm-analytics-dashboard" target="_blank" rel="noopener" class="proof-link primary">↗ View on GitHub</a>
-      <a href="https://docs.google.com/spreadsheets/d/1QG3Qxf_oIbs6Y2KZQMqdLHSpKyqFNJno1c3jU23Qhzk/edit?usp=sharing" target="_blank" rel="noopener" class="proof-link">📊 View Live Sheet</a>
+    <div class="demo-block">
+      <div class="demo-links">
+        <a href="https://docs.google.com/spreadsheets/d/1mcF-munfwADxutwUskZUAQEu-k3MZrd5PpCa6deETls/edit?usp=sharing" target="_blank" rel="noopener" class="demo-link">
+          View Live Demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+        </a>
+      </div>
+      <p class="demo-note">View-only demo with sample data. Sensitive business information has been removed to protect privacy while preserving the automation workflow.</p>
     </div>
   </div>
 </section>
@@ -812,11 +828,11 @@
     </div>
     <div class="two-col">
       <div class="case-section">
-        <h3>The Problem</h3>
+        <h3>Business Problem</h3>
         <p>Growing businesses accumulate software fast — a CRM here, an automation tool there — and renewal dates are easy to lose track of across dozens of vendors. Missed cancellations lead to paying for tools nobody uses; missed renewals lead to a tool shutting off mid-project. Both are avoidable, and both usually come down to nobody having one place to check.</p>
       </div>
       <div class="case-section">
-        <h3>My Solution</h3>
+        <h3>Solution</h3>
         <p>I built a Lists tab defining a controlled vocabulary — 20 tool categories, 8 status states (Active, Trial, Needs Review, Expired, Cancelled, Not In Use, Pending Setup, Archived), subscription types, and billing frequencies — feeding standardized dropdowns into a central Tool Tracker sheet, plus a Google Apps Script that emails a reminder 14 days before each renewal date.</p>
       </div>
     </div>
@@ -871,7 +887,7 @@
       </ul>
     </div>
     <div class="callout">
-      <b>Business value:</b> Software spend stops being something the business finds out about after the fact. Renewal decisions — keep, downgrade, or cancel — get made intentionally, ahead of the charge, instead of by default.
+      <b>Business Impact:</b> Software spend stops being something the business finds out about after the fact. Renewal decisions — keep, downgrade, or cancel — get made intentionally, ahead of the charge, instead of by default.
     </div>
     <div class="two-col" style="margin-top:44px;">
       <div class="case-section">
@@ -888,9 +904,14 @@
         <p>A tracker is only as good as the categories behind it. Building the Lists tab first — before a single tool was logged — meant every entry afterward was consistent, which is what made the automation reliable. Structure has to come before automation, not after.</p>
       </div>
     </div>
-    <div class="proof-links">
-      <a href="https://github.com/edostrishamae/subscription-software-tracker" target="_blank" rel="noopener" class="proof-link primary">↗ View on GitHub</a>
-      <a href="https://docs.google.com/spreadsheets/d/1ZWSZIUTSqNn4zX6cw1Q8YtNcHRzkZnlF6uy9Pojb2Nc/edit?usp=sharing" target="_blank" rel="noopener" class="proof-link">📊 View Live Sheet</a>
+    <div class="demo-block">
+      <div class="demo-links">
+        <a href="https://docs.google.com/spreadsheets/d/100_sb9hG6Vhf1LO3aDXVcnVSt8xo4UfNESMaUMwv2L0/edit?usp=sharing" target="_blank" rel="noopener" class="demo-link">
+          View Live Demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+        </a>
+      </div>
+      <p class="demo-note">View-only demo with sample data. Sensitive business information has been removed to protect privacy while preserving the automation workflow.</p>
     </div>
   </div>
 </section>
@@ -934,8 +955,8 @@
 <div class="divider-band" id="results">
   <div class="wrap">
     <div class="divider-stat"><span>3</span><div>End-to-end operational systems designed and built</div></div>
-    <div class="divider-stat"><span>$195K+</span><div>In sales activity tracked automatically, live</div></div>
-    <div class="divider-stat"><span>0</span><div>Stockouts across a 67-unit live inventory</div></div>
+    <div class="divider-stat"><span>Live</span><div>Automated dashboard reporting across every system</div></div>
+    <div class="divider-stat"><span>0</span><div>Stockouts across a 67-unit live inventory (real client project)</div></div>
     <div class="divider-stat"><span>14-day</span><div>Automated lead time on every subscription renewal</div></div>
   </div>
 </div>
@@ -952,7 +973,6 @@
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=edostrishamae@gmail.com" target="_blank" rel="noopener noreferrer">✉️ edostrishamae@gmail.com</a>
         <a href="https://www.linkedin.com/in/trisha-mae-edos" target="_blank" rel="noopener">LinkedIn Profile</a>
         <a href="#">📍 Pampanga, Philippines — open to remote roles</a>
-        <a href="https://github.com/edostrishamae" target="_blank" rel="noopener">↗ All project repos on GitHub</a>
       </div>
     </div>
   </div>
