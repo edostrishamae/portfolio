@@ -67,7 +67,6 @@
   .section-head{ max-width: 720px; margin-bottom: 56px; }
   .section-head h2{ margin-top: 14px; }
   .section-head p{ margin-top: 16px; color: var(--ink-soft); font-size: 17px; }
-
   /* NAV */
   nav{
     position: sticky; top:0; z-index: 50;
@@ -85,7 +84,6 @@
     background: var(--ink); color: #fff;
   }
   @media (max-width: 760px){ .navlinks{ display:none; } }
-
   /* HERO */
   .hero{ padding-top: 88px; padding-bottom: 90px; }
   .hero-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items:start; }
@@ -98,7 +96,6 @@
   .btn-primary{ background: var(--ink); color:#fff; }
   .btn-secondary{ border: 1px solid var(--border); background: var(--surface); }
   .btn:hover{ opacity: 0.85; }
-
   .hero-panel{
     background: var(--surface); border:1px solid var(--border); border-radius: var(--radius);
     padding: 26px; box-shadow: 0 1px 2px rgba(20,20,30,0.03);
@@ -110,19 +107,16 @@
   .kpi-value{ font-family:'IBM Plex Mono', monospace; font-weight:600; font-size: 16px; }
   .status-dot{ width:7px; height:7px; border-radius:50%; display:inline-block; margin-right:8px; }
   .status-dot.live{ background: var(--accent); }
-
   /* Ticker strip */
   .ticker{ border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); }
   .ticker .wrap{ padding: 22px 32px; display:flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
   .ticker-item{ display:flex; flex-direction:column; gap:4px; }
   .ticker-item .tv{ font-family:'IBM Plex Mono', monospace; font-weight:700; font-size: 21px; }
   .ticker-item .tl{ font-size: 12.5px; color: var(--ink-faint); }
-
   /* Cards grid */
   .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .grid-2{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
   @media (max-width: 900px){ .grid-3{ grid-template-columns: 1fr; } .grid-2{ grid-template-columns:1fr; } .hero-grid{ grid-template-columns: 1fr; } }
-
   .card{
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
     padding: 30px; transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -131,7 +125,6 @@
   .card .icon{ width:38px; height:38px; border-radius:10px; background: var(--accent-soft); display:flex; align-items:center; justify-content:center; margin-bottom: 18px; color: var(--accent-ink); }
   .card h3{ margin-bottom: 10px; }
   .card p{ color: var(--ink-soft); font-size: 14.5px; margin:0; }
-
   /* Skills */
   .skill-cat{ margin-bottom: 34px; }
   .skill-cat h4{ font-size: 13px; text-transform:uppercase; letter-spacing:0.08em; color: var(--ink-faint); margin-bottom: 16px; font-family:'IBM Plex Mono',monospace; font-weight:500; }
@@ -140,14 +133,12 @@
     border:1px solid var(--border); background: var(--surface); padding: 9px 15px; border-radius: 100px;
     font-size: 13.5px; font-weight:500; color: var(--ink);
   }
-
   /* Tools table-ish */
   .tool-row{ display:grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 20px 0; border-top:1px solid var(--border); align-items:start; }
   .tool-row:first-of-type{ border-top:none; }
   .tool-name{ font-weight:600; font-size:15px; }
   .tool-tag{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color: var(--accent-ink); background:var(--accent-soft); padding:2px 8px; border-radius:6px; display:inline-block; margin-top:6px; }
   .tool-desc{ color: var(--ink-soft); font-size:14.5px; }
-
   /* Project index cards */
   .proj-card{
     background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); overflow:hidden;
@@ -176,7 +167,6 @@
   .proj-stats div{ font-size:12.5px; color:var(--ink-faint); }
   .proj-stats span{ display:block; font-family:'IBM Plex Mono',monospace; font-weight:700; color:var(--ink); font-size:16px; }
   .proj-link{ margin-top:20px; font-weight:600; font-size:14px; color: var(--accent-ink); display:inline-flex; align-items:center; gap:6px; }
-
   /* Case study */
   .case{ padding: 100px 0; }
   .case-head{ display:flex; justify-content:space-between; align-items:flex-end; gap: 40px; margin-bottom: 48px; flex-wrap:wrap; }
@@ -184,7 +174,6 @@
   .case-stats-row{ display:flex; gap: 40px; flex-wrap:wrap; }
   .case-stats-row .stat span{ display:block; font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:24px; }
   .case-stats-row .stat div{ font-size:12.5px; color:var(--ink-faint); margin-top:4px; }
-
   .case-section{ margin-bottom: 44px; }
   .case-section h3{ display:flex; align-items:center; gap:10px; margin-bottom: 16px; }
   .case-section h3::before{
@@ -195,23 +184,27 @@
   .case-section li{ margin-bottom: 8px; }
   .two-col{ display:grid; grid-template-columns: 1fr 1fr; gap: 40px; }
   @media (max-width: 900px){ .two-col{ grid-template-columns: 1fr; } .case-head{ flex-direction:column; align-items:flex-start; } }
-
   .callout{
     background: var(--surface); border:1px solid var(--border); border-radius: var(--radius-sm);
     padding: 20px 22px; font-size: 14.5px; color: var(--ink-soft);
   }
   .callout b{ color: var(--ink); }
-
   .workflow-steps{ display:flex; flex-direction:column; gap:0; }
   .wf-step{ display:grid; grid-template-columns: 34px 1fr; gap: 16px; padding: 16px 0; border-top:1px solid var(--border); }
   .wf-step:first-of-type{ border-top:none; }
   .wf-num{ font-family:'IBM Plex Mono',monospace; font-weight:700; color: var(--accent); font-size:14px; }
   .wf-title{ font-weight:600; font-size:15px; margin-bottom:4px; }
   .wf-desc{ color: var(--ink-soft); font-size:14.5px; }
-
   .tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 4px; }
   .tag-row .chip{ font-size:12.5px; padding:6px 12px; }
-
+  /* Proof links (GitHub / Live Sheet) */
+  .proof-links{ display:flex; gap:14px; margin-top:44px; flex-wrap:wrap; }
+  .proof-link{
+    display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:10px;
+    font-size:14px; font-weight:600; border:1px solid var(--border); background:var(--surface);
+  }
+  .proof-link.primary{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .proof-link:hover{ opacity:0.85; }
   .divider-band{
     background: var(--ink); color: #fff; padding: 90px 0; border-top:none;
   }
@@ -219,7 +212,6 @@
   .divider-stat span{ font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:34px; display:block; }
   .divider-stat div{ color: rgba(255,255,255,0.55); font-size:13.5px; margin-top:8px; }
   @media (max-width: 760px){ .divider-band .wrap{ grid-template-columns: 1fr 1fr; } }
-
   /* Process */
   .process-list{ counter-reset: step; }
   .process-item{
@@ -229,7 +221,6 @@
   .process-index{ font-family:'IBM Plex Mono',monospace; font-size: 30px; font-weight:700; color: var(--border); }
   .process-item h3{ margin-bottom:8px; }
   .process-item p{ color: var(--ink-soft); margin:0; font-size: 15px; }
-
   /* footer / contact */
   .contact-card{
     background: var(--ink); color:#fff; border-radius: 20px; padding: 64px 56px;
@@ -241,13 +232,11 @@
   .contact-links a{ font-size:15px; font-weight:600; display:flex; align-items:center; gap:10px; }
   .contact-links a:hover{ color: #9fe8e0; }
   footer{ padding: 40px 0; text-align:center; color: var(--ink-faint); font-size:13px; }
-
   .fade-in{ opacity:0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-in.in{ opacity:1; transform: translateY(0); }
 </style>
 </head>
 <body>
-
 <nav>
   <div class="wrap">
     <div class="brand">Trisha Mae Edos</div>
@@ -261,7 +250,6 @@
     <a href="#contact" class="navcta">Get in touch</a>
   </div>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
@@ -298,7 +286,6 @@
     </div>
   </div>
 </section>
-
 <!-- TICKER -->
 <div class="ticker">
   <div class="wrap">
@@ -308,7 +295,6 @@
     <div class="ticker-item"><div class="tv">20</div><div class="tl">tool categories standardized in one tracker</div></div>
   </div>
 </div>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
@@ -317,7 +303,6 @@
       <h2>From civil engineering to executive operations.</h2>
       <p>I didn't start in operations — I started in Civil Engineering, where I learned to read a problem structurally before touching a single formula. That habit followed me: I still take businesses apart the same way I once took apart load calculations — piece by piece, until I understand exactly what's holding things up and what's about to break.</p>
     </div>
-
     <div class="two-col">
       <div>
         <h3>Why I moved into operations</h3>
@@ -330,7 +315,6 @@
     </div>
   </div>
 </section>
-
 <!-- WHAT I DO -->
 <section>
   <div class="wrap">
@@ -373,7 +357,6 @@
     </div>
   </div>
 </section>
-
 <!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
@@ -381,7 +364,6 @@
       <div class="eyebrow"><span class="dot"></span> Core Skills</div>
       <h2>What I bring to an operations seat.</h2>
     </div>
-
     <div class="skill-cat">
       <h4>Executive & Administrative</h4>
       <div class="chips">
@@ -423,7 +405,6 @@
     </div>
   </div>
 </section>
-
 <!-- TOOLS -->
 <section>
   <div class="wrap">
@@ -432,7 +413,6 @@
       <h2>What I actually build with.</h2>
       <p>Every tool below was used to build one of the systems in this portfolio — not listed for the sake of a longer list.</p>
     </div>
-
     <div class="tool-row">
       <div>
         <div class="tool-name">Google Sheets</div>
@@ -463,7 +443,6 @@
     </div>
   </div>
 </section>
-
 <!-- PROJECTS INDEX -->
 <section id="projects">
   <div class="wrap">
@@ -472,7 +451,6 @@
       <h2>Three systems. Three operational problems solved.</h2>
       <p>Each project started as a manual, error-prone process and ended as a live, self-updating system. Full case studies below.</p>
     </div>
-
     <div class="grid-3">
       <div class="proj-card">
         <div class="proj-media">
@@ -503,7 +481,6 @@
           <a href="#case-inventory" class="proj-link">Read case study →</a>
         </div>
       </div>
-
       <div class="proj-card">
         <div class="proj-media">
           <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
@@ -526,7 +503,6 @@
           <a href="#case-sales" class="proj-link">Read case study →</a>
         </div>
       </div>
-
       <div class="proj-card">
         <div class="proj-media">
           <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
@@ -554,7 +530,6 @@
     </div>
   </div>
 </section>
-
 <!-- ============ CASE STUDY 1: INVENTORY ============ -->
 <section class="case" id="case-inventory">
   <div class="wrap">
@@ -569,7 +544,6 @@
         <div class="stat"><span>0</span><div>Low-stock or out-of-stock items</div></div>
       </div>
     </div>
-
     <div class="case-visual">
       <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
         <text x="24" y="30" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A8F9C" letter-spacing="0.06em">LXTR PERFUME — BEST-SELLING PRODUCTS (LIVE)</text>
@@ -593,12 +567,10 @@
         <text x="733" y="115" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A8F9C">0 Low<tspan x="733" dy="14">Stock</tspan></text>
       </svg>
     </div>
-
     <div class="case-section">
       <h3>Project Overview</h3>
       <p>A full inventory management system built in Google Sheets for LXTR Perfume, a fragrance retail business, tracking every product from purchase to sale. The system replaced manual stock-counting with a live dashboard that recalculates inventory value, retail value, revenue, and gross profit the moment a purchase or sale is logged.</p>
     </div>
-
     <div class="two-col">
       <div class="case-section">
         <h3>The Problem</h3>
@@ -609,7 +581,6 @@
         <p>I designed a single source of truth: a Product Master sheet holding SKU-level cost and price data, feeding into separate Purchases and Sales logs, which in turn feed a live Inventory sheet and a summary Dashboard — so every number on the dashboard traces back to an actual logged transaction, not a manual entry.</p>
       </div>
     </div>
-
     <div class="case-section">
       <h3>Workflow</h3>
       <div class="workflow-steps">
@@ -635,7 +606,6 @@
         </div>
       </div>
     </div>
-
     <div class="two-col">
       <div class="case-section">
         <h3>Tools Used</h3>
@@ -652,7 +622,6 @@
         <p>Stock levels are calculated by netting logged purchases against logged sales per SKU, rather than requiring a manual count. Low-stock and out-of-stock flags compare live stock against each product's defined minimum level, so a product only appears on the "needs attention" list when it actually needs attention. Gross profit is calculated automatically from the cost and price already defined in the Product Master, so no one has to run that math by hand.</p>
       </div>
     </div>
-
     <div class="case-section">
       <h3>Key Features</h3>
       <ul>
@@ -662,11 +631,9 @@
         <li>Separate Purchases, Sales, Inventory, and Reports sheets, so raw data entry never touches the dashboard logic directly</li>
       </ul>
     </div>
-
     <div class="callout">
       <b>Business value:</b> The business owner can check one dashboard and know, without opening a single log sheet, what's low, what's selling, and what the current stock is actually worth — turning inventory management from a periodic manual audit into a live, always-current view.
     </div>
-
     <div class="two-col" style="margin-top:44px;">
       <div class="case-section">
         <h3>Skills Demonstrated</h3>
@@ -682,9 +649,12 @@
         <p>The hardest part wasn't the formulas — it was deciding what the dashboard should <i>not</i> show. Early versions surfaced every number available; the final version only surfaces what changes a decision (reorder, price, or promote). Restraint made the system more useful, not less.</p>
       </div>
     </div>
+    <div class="proof-links">
+      <a href="https://github.com/edostrishamae/lxtr-inventory-system" target="_blank" rel="noopener" class="proof-link primary">↗ View on GitHub</a>
+      <a href="https://docs.google.com/spreadsheets/d/1dgXNZ799nKNc3QW029wLR13YI4xV9x1iguwIko44Imc/edit?usp=sharing" target="_blank" rel="noopener" class="proof-link">📊 View Live Sheet</a>
+    </div>
   </div>
 </section>
-
 <!-- ============ CASE STUDY 2: SALES ============ -->
 <section class="case" id="case-sales" style="background:var(--surface);">
   <div class="wrap">
@@ -699,7 +669,6 @@
         <div class="stat"><span>65</span><div>Closed deals logged</div></div>
       </div>
     </div>
-
     <div class="case-visual">
       <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
         <text x="24" y="26" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A8F9C" letter-spacing="0.06em">MONTHLY REVENUE TREND — 2026</text>
@@ -710,19 +679,16 @@
         <text x="292" y="20" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#12141A">₱34,494 peak — Mar</text>
         <text x="60" y="150" font-family="Inter, sans-serif" font-size="10.5" fill="#8A8F9C">Jan</text>
         <text x="756" y="150" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" fill="#8A8F9C">Jul</text>
-
         <text x="24" y="184" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A8F9C" letter-spacing="0.06em">CONVERSION FUNNEL</text>
         <rect x="24" y="196" width="440" height="14" rx="7" fill="#0E6E67"/><text x="474" y="207" font-family="Inter, sans-serif" font-size="11" fill="#565C6B">Lead — 99 (100%)</text>
         <rect x="24" y="216" width="382" height="14" rx="7" fill="#0E6E67" fill-opacity="0.8"/><text x="416" y="227" font-family="Inter, sans-serif" font-size="11" fill="#565C6B">Contacted — 86 (86.9%)</text>
         <rect x="24" y="236" width="280" height="14" rx="7" fill="#0E6E67" fill-opacity="0.6"/><text x="314" y="247" font-family="Inter, sans-serif" font-size="11" fill="#565C6B">Qualified — 63 (63.6%)</text>
       </svg>
     </div>
-
     <div class="case-section">
       <h3>Project Overview</h3>
       <p>A self-initiated CRM analytics dashboard built in Google Sheets to demonstrate sales-operations reporting — turning lead and deal activity into a live, filterable view of business performance across 99 leads and 65 closed deals, using a realistic multi-year, multi-product dataset I built to model how a real sales pipeline behaves.</p>
     </div>
-
     <div class="two-col">
       <div class="case-section">
         <h3>The Problem</h3>
@@ -733,7 +699,6 @@
         <p>I built a dashboard with dropdown-driven filters — Year, Month, Sales Rep, Product, Sales Status — sitting on top of separate Leads and Sales data sheets. Changing a dropdown instantly recalculates filtered revenue, deal count, and average deal size, so anyone can answer a specific question without touching a single formula.</p>
       </div>
     </div>
-
     <div class="case-section">
       <h3>Workflow</h3>
       <div class="workflow-steps">
@@ -759,7 +724,6 @@
         </div>
       </div>
     </div>
-
     <div class="two-col">
       <div class="case-section">
         <h3>Tools Used</h3>
@@ -776,7 +740,6 @@
         <p>KPI cards — total leads, total deals, converted leads, conversion rate, average order value, average revenue per lead, revenue this month and this year, highest sales month, best-performing product, and best sales day — are all formula-driven off the Leads and Sales sheets, so they update the moment new activity is logged. The conversion funnel and product rankings recompute the same way, with no manual pivot-table rebuilding required.</p>
       </div>
     </div>
-
     <div class="case-section">
       <h3>Key Features</h3>
       <ul>
@@ -787,11 +750,9 @@
         <li>Sales-status breakdown (Closed Won, Closed Lost, In Negotiation, Refunded)</li>
       </ul>
     </div>
-
     <div class="callout">
       <b>Business value:</b> Anyone reviewing the business — not just the person who built the sheet — can filter to a specific rep, product, or period and get a trustworthy answer in seconds, turning "let me pull that together" into "it's already there."
     </div>
-
     <div class="two-col" style="margin-top:44px;">
       <div class="case-section">
         <h3>Skills Demonstrated</h3>
@@ -807,9 +768,12 @@
         <p>A dashboard that's technically correct but slow to read is still a bad dashboard. Splitting calculations into a dedicated Helpers sheet kept every formula simpler and the actual dashboard sheet fast to scan — a small architectural decision that made the whole system more maintainable.</p>
       </div>
     </div>
+    <div class="proof-links">
+      <a href="https://github.com/edostrishamae/sales-crm-analytics-dashboard" target="_blank" rel="noopener" class="proof-link primary">↗ View on GitHub</a>
+      <a href="https://docs.google.com/spreadsheets/d/1QG3Qxf_oIbs6Y2KZQMqdLHSpKyqFNJno1c3jU23Qhzk/edit?usp=sharing" target="_blank" rel="noopener" class="proof-link">📊 View Live Sheet</a>
+    </div>
   </div>
 </section>
-
 <!-- ============ CASE STUDY 3: SUBSCRIPTIONS ============ -->
 <section class="case" id="case-subscriptions">
   <div class="wrap">
@@ -824,7 +788,6 @@
         <div class="stat"><span>14 days</span><div>Advance renewal reminder</div></div>
       </div>
     </div>
-
     <div class="case-visual">
       <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
         <text x="24" y="26" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A8F9C" letter-spacing="0.06em">STATUS LEGEND — TOOL TRACKER</text>
@@ -843,12 +806,10 @@
         <text x="500" y="140" font-family="Inter, sans-serif" font-size="12" fill="#0A524C">date-checking needed</text>
       </svg>
     </div>
-
     <div class="case-section">
       <h3>Project Overview</h3>
       <p>A self-initiated tracker built in Google Sheets and Google Apps Script to demonstrate vendor and subscription management — organizing every software tool a business might rely on across 20 categories, from CRM and Advertising to AI Tools and Development, with automatic email reminders ahead of renewal dates.</p>
     </div>
-
     <div class="two-col">
       <div class="case-section">
         <h3>The Problem</h3>
@@ -859,7 +820,6 @@
         <p>I built a Lists tab defining a controlled vocabulary — 20 tool categories, 8 status states (Active, Trial, Needs Review, Expired, Cancelled, Not In Use, Pending Setup, Archived), subscription types, and billing frequencies — feeding standardized dropdowns into a central Tool Tracker sheet, plus a Google Apps Script that emails a reminder 14 days before each renewal date.</p>
       </div>
     </div>
-
     <div class="case-section">
       <h3>Workflow</h3>
       <div class="workflow-steps">
@@ -885,7 +845,6 @@
         </div>
       </div>
     </div>
-
     <div class="two-col">
       <div class="case-section">
         <h3>Tools Used</h3>
@@ -902,7 +861,6 @@
         <p>The Apps Script layer is what turns this from a tracker into a system: rather than someone needing to remember to check renewal dates, the script compares each subscription's renewal date against today's date and fires an email automatically once a tool is 14 days out from renewal — removing the manual date-checking step entirely.</p>
       </div>
     </div>
-
     <div class="case-section">
       <h3>Key Features</h3>
       <ul>
@@ -912,11 +870,9 @@
         <li>Separate Dashboard, Archive, and Instructions tabs, so the system is usable by someone other than its builder</li>
       </ul>
     </div>
-
     <div class="callout">
       <b>Business value:</b> Software spend stops being something the business finds out about after the fact. Renewal decisions — keep, downgrade, or cancel — get made intentionally, ahead of the charge, instead of by default.
     </div>
-
     <div class="two-col" style="margin-top:44px;">
       <div class="case-section">
         <h3>Skills Demonstrated</h3>
@@ -932,9 +888,12 @@
         <p>A tracker is only as good as the categories behind it. Building the Lists tab first — before a single tool was logged — meant every entry afterward was consistent, which is what made the automation reliable. Structure has to come before automation, not after.</p>
       </div>
     </div>
+    <div class="proof-links">
+      <a href="https://github.com/edostrishamae/subscription-software-tracker" target="_blank" rel="noopener" class="proof-link primary">↗ View on GitHub</a>
+      <a href="https://docs.google.com/spreadsheets/d/1ZWSZIUTSqNn4zX6cw1Q8YtNcHRzkZnlF6uy9Pojb2Nc/edit?usp=sharing" target="_blank" rel="noopener" class="proof-link">📊 View Live Sheet</a>
+    </div>
   </div>
 </section>
-
 <!-- PROCESS -->
 <section id="process">
   <div class="wrap">
@@ -971,7 +930,6 @@
     </div>
   </div>
 </section>
-
 <!-- RESULTS -->
 <div class="divider-band" id="results">
   <div class="wrap">
@@ -981,7 +939,6 @@
     <div class="divider-stat"><span>14-day</span><div>Automated lead time on every subscription renewal</div></div>
   </div>
 </div>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
@@ -992,21 +949,17 @@
         <p>I'm currently open to Executive Assistant, Executive Operations, Operations Coordinator, and AI Workflow Automation roles at growing startups.</p>
       </div>
       <div class="contact-links">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=edostrishamae@gmail.com" target="_blank" rel="noopener noreferrer">
-    ✉️ edostrishamae@gmail.com
-</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=edostrishamae@gmail.com" target="_blank" rel="noopener noreferrer">✉️ edostrishamae@gmail.com</a>
         <a href="https://www.linkedin.com/in/trisha-mae-edos" target="_blank" rel="noopener">LinkedIn Profile</a>
         <a href="#">📍 Pampanga, Philippines — open to remote roles</a>
-        <a href="#">↗ Full project files & spreadsheets on request</a>
+        <a href="https://github.com/edostrishamae" target="_blank" rel="noopener">↗ All project repos on GitHub</a>
       </div>
     </div>
   </div>
 </section>
-
 <footer>
   © 2026 — Built with Google Sheets, Apps Script, and a lot of attention to detail.
 </footer>
-
 <script>
   const els = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver((entries) => {
@@ -1014,6 +967,5 @@
   }, { threshold: 0.15 });
   els.forEach(el => obs.observe(el));
 </script>
-
 </body>
 </html>
