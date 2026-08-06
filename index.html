@@ -297,7 +297,7 @@
   <div class="wrap">
     <div class="ticker-item"><div class="tv">3</div><div class="tl">end-to-end systems designed</div></div>
     <div class="ticker-item"><div class="tv">Dynamic</div><div class="tl">KPI dashboard reporting</div></div>
-    <div class="ticker-item"><div class="tv">₱8,030.99</div><div class="tl">live inventory value — real client project</div></div>
+    <div class="ticker-item"><div class="tv">15</div><div class="tl">live KPI cards — real client project</div></div>
     <div class="ticker-item"><div class="tv">20</div><div class="tl">tool categories standardized in one tracker</div></div>
   </div>
 </div>
@@ -477,12 +477,12 @@
         </div>
         <div class="proj-body">
           <div class="proj-tag">Retail Operations — LXTR Perfume</div>
-          <h3>AI-Powered Inventory Management System</h3>
-          <p style="color:var(--ink-soft); font-size:14.5px;">A live inventory system built for LXTR Perfume, a fragrance retail business — tracking stock, cost, and sales in real time.</p>
+          <h3>AI-Powered Inventory & Business Intelligence System</h3>
+          <p style="color:var(--ink-soft); font-size:14.5px;">A full inventory + BI system for LXTR Perfume — 15 live KPIs, automatic reorder logic, and Apps Script automation running on top of Google Sheets.</p>
           <div class="proj-stats">
-            <div>Stock Value<span>₱8,030.99</span></div>
-            <div>Units Tracked<span>67</span></div>
-            <div>Stockouts<span>0</span></div>
+            <div>KPI Cards<span>15</span></div>
+            <div>Auto Charts<span>3</span></div>
+            <div>Automations<span>5+</span></div>
           </div>
           <a href="#case-inventory" class="proj-link">Read case study →</a>
         </div>
@@ -542,12 +542,12 @@
     <div class="case-head">
       <div>
         <div class="case-num">CASE STUDY 01 / 03</div>
-        <h2>AI-Powered Inventory Management System</h2>
+        <h2>AI-Powered Inventory & Business Intelligence System</h2>
       </div>
       <div class="case-stats-row">
-        <div class="stat"><span>₱14,070</span><div>Total retail value</div></div>
-        <div class="stat"><span>₱1,475</span><div>Gross profit, live</div></div>
-        <div class="stat"><span>0</span><div>Low-stock or out-of-stock items</div></div>
+        <div class="stat"><span>15</span><div>Live KPI cards on the dashboard</div></div>
+        <div class="stat"><span>5+</span><div>Apps Script automations (alerts, invoices, backups)</div></div>
+        <div class="stat"><span>0</span><div>Manual calculations required</div></div>
       </div>
     </div>
     <div class="case-visual">
@@ -575,16 +575,16 @@
     </div>
     <div class="case-section">
       <h3>Project Overview</h3>
-      <p>A full inventory management system built in Google Sheets for LXTR Perfume, a fragrance retail business, tracking every product from purchase to sale. The system replaced manual stock-counting with a live dashboard that recalculates inventory value, retail value, revenue, and gross profit the moment a purchase or sale is logged.</p>
+      <p>A full inventory and business intelligence system built in Google Sheets and Google Apps Script for LXTR Perfume, a fragrance retail business. What started as a stock tracker has grown into an executive dashboard with 15 live KPIs, automatic reorder logic, and a suite of Apps Script automations — low-stock alerts, one-click PDF invoices, and one-click backups — so the owner runs the business from one workbook instead of stitching together spreadsheets, notes, and memory.</p>
     </div>
     <div class="two-col">
       <div class="case-section">
         <h3>Business Problem</h3>
-        <p>Retail inventory is easy to lose track of once a catalog grows past a handful of products. Without a system, stock counts, reorder points, and profit margins live in someone's memory or in disconnected notes — which means stockouts, overstock, and no clear read on which products are actually worth reordering.</p>
+        <p>Retail inventory is easy to lose track of once a catalog grows past a handful of products. Without a system, stock counts, reorder points, and profit margins live in someone's memory or in disconnected notes — which means stockouts, overstock, and no clear read on which products are actually worth reordering, let alone when to reorder them or how much.</p>
       </div>
       <div class="case-section">
         <h3>Solution</h3>
-        <p>I designed a single source of truth: a Product Master sheet holding SKU-level cost and price data, feeding into separate Purchases and Sales logs, which in turn feed a live Inventory sheet and a summary Dashboard — so every number on the dashboard traces back to an actual logged transaction, not a manual entry.</p>
+        <p>I designed a single source of truth: a Product Master sheet holding SKU-level cost, price, and lead-time data, feeding into Purchases and Sales logs — the only two sheets requiring manual entry — which in turn drive a fully automatic Inventory sheet, a Reports sheet, and a 15-KPI Executive Dashboard. On top of that sits an Apps Script layer that handles order numbering, validation, alerts, invoicing, and backups, so the system runs itself between data entries.</p>
       </div>
     </div>
     <div class="case-section">
@@ -592,23 +592,23 @@
       <div class="workflow-steps">
         <div class="wf-step">
           <div class="wf-num">01</div>
-          <div><div class="wf-title">Product Master as the source of truth</div><div class="wf-desc">Every product is defined once — cost, retail price, and minimum stock level — so downstream calculations never have to guess at a number.</div></div>
+          <div><div class="wf-title">Product Master as the source of truth</div><div class="wf-desc">Every product is defined once — cost, retail price, minimum stock level, and lead time — with duplicate-SKU blocking so downstream calculations never inherit a bad entry.</div></div>
         </div>
         <div class="wf-step">
           <div class="wf-num">02</div>
-          <div><div class="wf-title">Purchases log stock coming in</div><div class="wf-desc">Every restock is entered as a line item, tied back to a product via SKU.</div></div>
+          <div><div class="wf-title">Purchases and Sales are the only manual entry</div><div class="wf-desc">Logging a purchase or sale is the one hands-on step left — order numbers auto-generate (ORD-0001, etc.) the moment a SKU is entered, and built-in validation blocks invalid dates, negative quantities, and duplicates.</div></div>
         </div>
         <div class="wf-step">
           <div class="wf-num">03</div>
-          <div><div class="wf-title">Sales log stock going out</div><div class="wf-desc">Every sale is logged the same way, capturing quantity sold and revenue per product.</div></div>
+          <div><div class="wf-title">Inventory recalculates itself, with judgment built in</div><div class="wf-desc">Stock levels, status (OK / Low / Out), Safety Stock, Reorder Point, and Suggested Restock Qty all update automatically — alongside ABC Classification and Movement Status, which flag which products actually drive revenue.</div></div>
         </div>
         <div class="wf-step">
           <div class="wf-num">04</div>
-          <div><div class="wf-title">Inventory sheet nets the two automatically</div><div class="wf-desc">Current stock per product is calculated as purchases minus sales — no manual counting required.</div></div>
+          <div><div class="wf-title">The Executive Dashboard surfaces 15 KPIs and 3 live charts</div><div class="wf-desc">Inventory value, revenue, profit, margin, turnover, and an overall inventory health score sit alongside auto-updating monthly trend, best-seller, and stock-status charts.</div></div>
         </div>
         <div class="wf-step">
           <div class="wf-num">05</div>
-          <div><div class="wf-title">Dashboard surfaces what matters</div><div class="wf-desc">Total inventory value, retail value, revenue, gross profit, and any low-stock or out-of-stock items are pulled to the top automatically.</div></div>
+          <div><div class="wf-title">Apps Script closes the loop</div><div class="wf-desc">A custom "LXTR Tools" menu sends low-stock and daily summary emails, generates a PDF invoice per sale with one click, and backs up the whole workbook to Drive on demand.</div></div>
         </div>
       </div>
     </div>
@@ -617,42 +617,48 @@
         <h3>Tools Used</h3>
         <div class="tag-row">
           <div class="chip">Google Sheets</div>
+          <div class="chip">Google Apps Script</div>
           <div class="chip">SUMIFS / conditional formulas</div>
           <div class="chip">Data validation</div>
           <div class="chip">Conditional formatting</div>
-          <div class="chip">AI-assisted formula design</div>
+          <div class="chip">Locked formula cells</div>
+          <div class="chip">Time-based triggers (email + PDF)</div>
+          <div class="chip">AI-assisted system design</div>
         </div>
       </div>
       <div class="case-section">
         <h3>Automation Logic</h3>
-        <p>Stock levels are calculated by netting logged purchases against logged sales per SKU, rather than requiring a manual count. Low-stock and out-of-stock flags compare live stock against each product's defined minimum level, so a product only appears on the "needs attention" list when it actually needs attention. Gross profit is calculated automatically from the cost and price already defined in the Product Master, so no one has to run that math by hand.</p>
+        <p>Stock levels are calculated by netting logged purchases against sales per SKU. Reorder logic goes a step further: Safety Stock and Reorder Point are calculated from each product's sales velocity and lead time, and a Suggested Restock Qty is generated automatically — turning "what's low" into "what to order and roughly how much." ABC Classification and a Performance Score rank products by actual revenue contribution, and every formula cell is locked so only real input cells (Product Master, Purchases, Sales) can be edited, protecting the logic underneath.</p>
       </div>
     </div>
     <div class="case-section">
       <h3>Key Features</h3>
       <ul>
-        <li>Live dashboard showing total inventory value, total units in stock, total retail value, total sales revenue, and total gross profit</li>
-        <li>Automatic low-stock and out-of-stock alerts, benchmarked against a per-product minimum level</li>
-        <li>Best-selling products ranked automatically by quantity sold and revenue</li>
-        <li>Separate Purchases, Sales, Inventory, and Reports sheets, so raw data entry never touches the dashboard logic directly</li>
+        <li>15-KPI Executive Dashboard — inventory value/cost, revenue, profit, margin, stock counts, monthly revenue/profit, average order value, inventory turnover, and an overall inventory health score</li>
+        <li>3 auto-updating charts: monthly revenue & profit trend, top 5 best-sellers, and stock status breakdown</li>
+        <li>Smart inventory fields — Safety Stock, Reorder Point, Suggested Restock Qty, ABC Classification, Movement Status, and Performance Score</li>
+        <li>Auto-generated Order Numbers and built-in validation (no invalid dates, negative quantities, or duplicate SKUs/orders) on every logged purchase or sale</li>
+        <li>Custom "LXTR Tools" Apps Script menu — low-stock and daily summary emails, one-click PDF invoice generation, one-click Drive backup</li>
+        <li>Locked formula cells and consistent dashboard styling, so the system is safe and readable for someone other than its builder</li>
       </ul>
     </div>
     <div class="callout">
-      <b>Business Impact:</b> The business owner can check one dashboard and know, without opening a single log sheet, what's low, what's selling, and what the current stock is actually worth — turning inventory management from a periodic manual audit into a live, always-current view.
+      <b>Business Impact:</b> The business owner can check one dashboard and know, without opening a single log sheet, what's low, what's selling, what to reorder and roughly how much, and what the business is actually worth right now — turning inventory management from a periodic manual audit into a live, always-current, self-protecting system.
     </div>
     <div class="two-col" style="margin-top:44px;">
       <div class="case-section">
         <h3>Skills Demonstrated</h3>
         <ul>
           <li>Systems design (separating data entry from reporting)</li>
-          <li>Formula-based automation</li>
-          <li>Retail operations logic (cost vs. retail vs. margin)</li>
+          <li>Formula-based and script-based automation</li>
+          <li>Inventory planning logic (safety stock, reorder point, ABC analysis)</li>
+          <li>Google Apps Script (triggers, email automation, PDF generation)</li>
           <li>Dashboard design for non-technical end users</li>
         </ul>
       </div>
       <div class="case-section">
         <h3>Lessons Learned</h3>
-        <p>The hardest part wasn't the formulas — it was deciding what the dashboard should <i>not</i> show. Early versions surfaced every number available; the final version only surfaces what changes a decision (reorder, price, or promote). Restraint made the system more useful, not less.</p>
+        <p>The hardest part wasn't the formulas — it was deciding what the dashboard should <i>not</i> show, and then, later, what to automate versus what to leave as a deliberate manual step. Locking formula cells and keeping Purchases/Sales as the only manual entry points came from watching where accidental edits could actually break something. The system is still evolving: monthly trend charts and time-based KPIs sit at zero until real sale dates are logged, which is the next real-data milestone.</p>
       </div>
     </div>
     <div class="demo-block">
